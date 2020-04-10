@@ -1,5 +1,5 @@
 .GalleryItem {
-  display: grid;
+  display: inline-grid;
   grid:
     "item" 1fr
     "like" 35px / 100%;
@@ -11,6 +11,7 @@
   text-align: center;
   overflow: hidden;
   justify-items: center;
+  margin: 5px;
 }
 
 .GalleryItem > img {

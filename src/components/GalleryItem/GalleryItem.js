@@ -38,11 +38,7 @@ function GalleryItem(props) {
     );
   } else {
     return (
-      <div
-        onClick={toggleDisplayMode}
-        className="GalleryItem"
-        onClick={toggleDisplayMode}
-      >
+      <div onClick={toggleDisplayMode} className="GalleryItem">
         <p>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
       </div>
     );

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
+//  TODO: make cards fixed size
+//  TODO: animate cards
+
 function GalleryComponent(props) {
   const [displayMode, setDisplayMode] = useState("img");
+  const testImgURL = "images/goat_small.jpg";
 
   const toggleDisplayMode = () => {
     // switch display mode between image and description
@@ -12,12 +16,19 @@ function GalleryComponent(props) {
     }
   };
 
-  return (
-    <div>
-      <p>The display mode is {displayMode}</p>
-      <button onClick={toggleDisplayMode}>Click</button>
-    </div>
-  );
+  if (displayMode === "img") {
+    return (
+      <div onClick={toggleDisplayMode}>
+        <img src={testImgURL} />
+      </div>
+    );
+  } else {
+    return (
+      <div onClick={toggleDisplayMode}>
+        <p>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION </p>
+      </div>
+    );
+  }
 }
 
 export default GalleryComponent;

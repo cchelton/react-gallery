@@ -9,7 +9,9 @@ function GalleryList(props) {
       imgURL={item.path}
       description={item.description}
       id={item.id}
+      likes={item.likes}
       key={index}
+      putLikes={props.putLikes}
     />
   ));
   return <div className="GalleryList">{elements}</div>;

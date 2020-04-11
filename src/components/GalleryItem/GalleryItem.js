@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./GalleryItem.css";
 
 //  TODO: animate cards
@@ -9,6 +9,11 @@ function GalleryItem(props) {
   const imgURL = props.imgURL;
   const description = props.description;
   const id = props.id;
+  const putLikes = props.putLikes;
+
+  useEffect(() => {
+    setLikes(props.likes);
+  }, [props.likes]);
 
   const toggleDisplayMode = () => {
     // switch display mode between image and description
@@ -21,18 +26,23 @@ function GalleryItem(props) {
 
   const likePicture = (event) => {
     setLikes(likes + 1);
+    const id = event.target.dataset.id;
+    console.log(id);
+    putLikes(id);
   };
 
   if (displayMode === "img") {
     return (
-      <div className="GalleryItem" key={id}>
+      <div className="GalleryItem">
         <img
           onClick={toggleDisplayMode}
           src={imgURL}
           alt="boo hoo you forgot an img"
         />
         <div className="LikeBar">
-          <button onClick={likePicture}>Like</button>
+          <button onClick={likePicture} data-id={id}>
+            Like
+          </button>
           <p>{likes} Likes</p>
         </div>
       </div>

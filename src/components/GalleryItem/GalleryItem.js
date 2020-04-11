@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./GalleryItem.css";
 
-//  TODO: make cards fixed size
 //  TODO: animate cards
 
 function GalleryItem(props) {
   const [displayMode, setDisplayMode] = useState("img");
   const [likes, setLikes] = useState(0);
-  const testImgURL = "images/goat_small.jpg";
+  const imgURL = props.imgURL;
+  const description = props.description;
+  const id = props.id;
 
   const toggleDisplayMode = () => {
     // switch display mode between image and description
@@ -24,10 +25,10 @@ function GalleryItem(props) {
 
   if (displayMode === "img") {
     return (
-      <div className="GalleryItem">
+      <div className="GalleryItem" key={id}>
         <img
           onClick={toggleDisplayMode}
-          src={testImgURL}
+          src={imgURL}
           alt="boo hoo you forgot an img"
         />
         <div className="LikeBar">
@@ -38,8 +39,8 @@ function GalleryItem(props) {
     );
   } else {
     return (
-      <div onClick={toggleDisplayMode} className="GalleryItem">
-        <p>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
+      <div onClick={toggleDisplayMode} className="GalleryItem" key={id}>
+        <p>{description}</p>
       </div>
     );
   }

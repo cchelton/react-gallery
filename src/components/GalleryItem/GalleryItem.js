@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./GalleryItem.css";
 
-//  TODO: make cards fixed size
 //  TODO: animate cards
 
 function GalleryItem(props) {
   const [displayMode, setDisplayMode] = useState("img");
   const [likes, setLikes] = useState(0);
-  const testImgURL = "images/goat_small.jpg";
+  const imgURL = props.imgURL;
+  const description = props.description;
+  const id = props.id;
+  const putLikes = props.putLikes;
+
+  useEffect(() => {
+    setLikes(props.likes);
+  }, [props.likes]);
 
   const toggleDisplayMode = () => {
     // switch display mode between image and description
@@ -20,6 +26,8 @@ function GalleryItem(props) {
 
   const likePicture = (event) => {
     setLikes(likes + 1);
+    const id = event.target.dataset.id;
+    putLikes(id);
   };
 
   if (displayMode === "img") {
@@ -27,19 +35,21 @@ function GalleryItem(props) {
       <div className="GalleryItem">
         <img
           onClick={toggleDisplayMode}
-          src={testImgURL}
+          src={imgURL}
           alt="boo hoo you forgot an img"
         />
         <div className="LikeBar">
-          <button onClick={likePicture}>Like</button>
+          <button onClick={likePicture} data-id={id}>
+            Like
+          </button>
           <p>{likes} Likes</p>
         </div>
       </div>
     );
   } else {
     return (
-      <div onClick={toggleDisplayMode} className="GalleryItem">
-        <p>DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION DESCRIPTION</p>
+      <div onClick={toggleDisplayMode} className="GalleryItem" key={id}>
+        <p>{description}</p>
       </div>
     );
   }

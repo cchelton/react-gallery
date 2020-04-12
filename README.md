@@ -13,6 +13,7 @@ Include one or two screen shots of your project here (optional). Remove if unuse
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ## Installation
 

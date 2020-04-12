@@ -1,0 +1,20 @@
+.AddItemForm {
+  display: inline-block;
+  height: 190px;
+  width: 170px;
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 2%;
+  text-align: center;
+  overflow: hidden;
+  justify-items: center;
+  margin: 5px;
+}
+
+.AddItemForm > form > * {
+  width: 150px;
+}
+
+.AddItemForm > form > button {
+  width: auto;
+}

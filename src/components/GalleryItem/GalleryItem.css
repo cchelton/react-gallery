@@ -16,6 +16,8 @@
 
 .GalleryItem > img {
   grid-area: item;
+  height: 150px;
+  width: 150px;
 }
 .GalleryItem > p {
   grid-area: item;

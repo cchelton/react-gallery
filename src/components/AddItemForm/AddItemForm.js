@@ -75,9 +75,6 @@ function AddItemForm(props) {
         />
         <button>Add</button>
       </form>
-      <p>
-        {formData.path} {formData.description}{" "}
-      </p>
     </div>
   );
 }

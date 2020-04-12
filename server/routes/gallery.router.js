@@ -36,4 +36,22 @@ router.get("/", (req, res) => {
     });
 }); // END GET Route
 
+// POST ROUTE
+router.post("/", (req, res) => {
+  const reqData = req.body;
+  const queryText = `INSERT INTO "galleryItems" ("path", "description", "likes")
+    VALUES($1, $2, 0)`;
+
+  pool
+    .query(queryText, [reqData.path, reqData.description])
+    .then((dbResponse) => {
+      console.log(`POST SUCCESS`);
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log(`POST ERROR: ${err}`);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;

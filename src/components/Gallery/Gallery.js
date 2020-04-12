@@ -45,7 +45,11 @@ function Gallery() {
 
   return (
     <div>
-      <GalleryList gallery={gallery} putLikes={putLikes} />
+      <GalleryList
+        gallery={gallery}
+        putLikes={putLikes}
+        getGallery={getGallery}
+      />
     </div>
   );
 }

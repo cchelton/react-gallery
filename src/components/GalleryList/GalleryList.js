@@ -1,6 +1,7 @@
 import React from "react";
 import GalleryItem from "../GalleryItem/GalleryItem";
 import "./GalleryList.css";
+import AddItemForm from "../AddItemForm/AddItemForm";
 
 function GalleryList(props) {
   const elements = props.gallery.map((item, index) => (
@@ -18,7 +19,12 @@ function GalleryList(props) {
   //  RENDER
   //
 
-  return <div className="GalleryList">{elements}</div>;
+  return (
+    <div className="GalleryList">
+      {elements}
+      <AddItemForm getGallery={props.getGallery} />
+    </div>
+  );
 }
 
 export default GalleryList;

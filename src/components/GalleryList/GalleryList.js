@@ -12,6 +12,7 @@ function GalleryList(props) {
       likes={item.likes}
       key={index}
       putLikes={props.putLikes}
+      getGallery={props.getGallery}
     />
   ));
 

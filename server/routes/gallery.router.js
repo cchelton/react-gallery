@@ -52,6 +52,22 @@ router.post("/", (req, res) => {
       console.log(`POST ERROR: ${err}`);
       res.sendStatus(500);
     });
+}); // END POST ROUTE
+
+// DELETE ROUTE
+router.delete("/delete/:id", (req, res) => {
+  const reqID = req.params.id;
+  const queryText = `DELETE FROM "galleryItems" WHERE "id"=$1`;
+  pool
+    .query(queryText, [reqID])
+    .then((dbResponse) => {
+      console.log(`DELETE SUCCESS`);
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(`DELETE ERR: ${err}`);
+      res.sendStatus(500);
+    });
 });
 
 module.exports = router;

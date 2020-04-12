@@ -42,3 +42,18 @@
 .LikeBar > p {
   display: inline-block;
 }
+
+.DeleteBar {
+  display: flex;
+  grid-area: like;
+  height: 35px;
+  width: 150px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.DeleteBar > button {
+  height: 35px;
+  border-radius: 7%;
+  font-size: 1rem;
+}

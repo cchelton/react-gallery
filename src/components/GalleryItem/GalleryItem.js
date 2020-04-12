@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./GalleryItem.css";
+import axios from "axios";
 
 //  TODO: animate cards
 
@@ -10,10 +11,28 @@ function GalleryItem(props) {
   const description = props.description;
   const id = props.id;
   const putLikes = props.putLikes;
+  const getGallery = props.getGallery;
 
   useEffect(() => {
     setLikes(props.likes);
   }, [props.likes]);
+
+  //
+  //  SERVER API CALLS
+  //
+
+  function deleteItem(id) {
+    axios({
+      method: "DELETE",
+      url: `gallery/delete/${id}`,
+    }).then((response) => {
+      getGallery();
+    });
+  }
+
+  //
+  //  EVENT HANDLERS
+  //
 
   const toggleDisplayMode = () => {
     // switch display mode between image and description
@@ -28,6 +47,15 @@ function GalleryItem(props) {
     const id = event.target.dataset.id;
     putLikes(id);
   };
+
+  const deletePicture = (event) => {
+    const id = event.target.dataset.id;
+    deleteItem(id);
+  };
+
+  //
+  //  RETURN
+  //
 
   if (displayMode === "img") {
     return (
@@ -49,6 +77,11 @@ function GalleryItem(props) {
     return (
       <div onClick={toggleDisplayMode} className="GalleryItem" key={id}>
         <p>{description}</p>
+        <div className="DeleteBar">
+          <button onClick={deletePicture} data-id={id}>
+            Delete
+          </button>
+        </div>
       </div>
     );
   }

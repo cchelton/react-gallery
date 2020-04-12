@@ -3,8 +3,7 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 import "./GalleryList.css";
 
 function GalleryList(props) {
-  const gallery = props.gallery;
-  const elements = gallery.map((item, index) => (
+  const elements = props.gallery.map((item, index) => (
     <GalleryItem
       imgURL={item.path}
       description={item.description}
@@ -14,6 +13,11 @@ function GalleryList(props) {
       putLikes={props.putLikes}
     />
   ));
+
+  //
+  //  RENDER
+  //
+
   return <div className="GalleryList">{elements}</div>;
 }
 

@@ -25,7 +25,6 @@ function GalleryItem(props) {
   };
 
   const likePicture = (event) => {
-    setLikes(likes + 1);
     const id = event.target.dataset.id;
     putLikes(id);
   };

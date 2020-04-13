@@ -8,7 +8,7 @@ I created a gallery app using React. This app stores an image with its descripti
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+![Gallery-App](appPic.png)
 
 ### Prerequisites
 
@@ -29,10 +29,13 @@ Include one or two screen shots of your project here (optional). Remove if unuse
 
 1. Click an image to flip the card and view the description
 2. Click "Like" to like a card
+3. Add an image by inputting its URL and description (optional) to the add card
+4. Delete an image by flipping the card to the description side, and clicking `Delete`
 
 ## Built With
 
-React
+[React](https://reactjs.org/)
+[Framer-Motion](https://www.framer.com/motion/)
 
 ## License
 

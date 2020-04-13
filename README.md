@@ -8,7 +8,7 @@ I created a gallery app using React. This app stores an image with its descripti
 
 ## Screen Shot
 
-![Gallery-App](./appPic.png)
+![Gallery-App](AppPic.png)
 
 ### Prerequisites
 

@@ -1,0 +1,6 @@
+.GalleryList {
+  display: flex;
+  margin: 0px 10%;
+  justify-content: center;
+  flex-wrap: wrap;
+}

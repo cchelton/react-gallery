@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./GalleryItem.css";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 //  TODO: animate cards
+const spring = {
+  type: "spring",
+  damping: 20,
+  stiffness: 300,
+};
 
 function GalleryItem(props) {
   const [displayMode, setDisplayMode] = useState("img");
@@ -59,7 +65,7 @@ function GalleryItem(props) {
 
   if (displayMode === "img") {
     return (
-      <div className="GalleryItem">
+      <motion.div className="GalleryItem" layoutTransition={spring}>
         <img
           onClick={toggleDisplayMode}
           src={imgURL}
@@ -71,7 +77,7 @@ function GalleryItem(props) {
           </button>
           <p>{likes} Likes</p>
         </div>
-      </div>
+      </motion.div>
     );
   } else {
     return (

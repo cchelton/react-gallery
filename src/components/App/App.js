@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Gallery from "../Gallery/Gallery";
+import GalleryList from "../GalleryList/GalleryList";
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
-        <Gallery />
+        <GalleryList />
       </div>
     );
   }

@@ -8,7 +8,7 @@ I created a gallery app using React. This app stores an image with its descripti
 
 ## Screen Shot
 
-![Gallery-App](appPic.png)
+![Gallery-App](./appPic.png)
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ I created a gallery app using React. This app stores an image with its descripti
 
 ## Built With
 
-[React](https://reactjs.org/)
+[React](https://reactjs.org/)<br/>
 [Framer-Motion](https://www.framer.com/motion/)
 
 ## License

@@ -21,7 +21,6 @@ function AddItemForm(props) {
       data: formData,
     })
       .then((response) => {
-        console.log(response);
         setFormData({
           path: "",
           description: "",
